@@ -14,7 +14,7 @@ A founder presents a lean canvas to an advisory board — confident and complete
 
 ## 3. What it costs to leave it alone
 
-Building on a belief that had already failed; a pivot delayed a quarter because the evidence had no home; advisors advising on a canvas that no longer describes the business. For a first-time founder the cost is runway, and I will not put a figure on runway that varies with every company. The quieter cost is the habit: a canvas treated as a plan teaches a founder to defend it, and a founder who defends beliefs stops testing them.
+Building on a belief that had already failed; a pivot delayed a quarter because the evidence had no home; advisors advising on a canvas that no longer describes the business. For a first-time founder the cost is runway, and I will not put a figure on runway that varies by company. The quieter cost is the habit: a canvas treated as a plan teaches a founder to defend it, and a founder who defends beliefs stops testing them.
 
 ## 4. The approach, and the alternative I rejected
 
