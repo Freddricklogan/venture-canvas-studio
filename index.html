@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Venture Canvas Studio — lean canvas with a hypothesis tracker</title>
+<meta name="description" content="A lean canvas whose blocks carry falsifiable hypotheses, an experiment log that records the success criterion before the result, and a test-next list ranked by risk, uncertainty and cost. Saved in your browser; nothing leaves it.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freddricklogan.github.io/venture-canvas-studio/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1220'/%3E%3Cg fill='none' stroke='%2358a6ff' stroke-width='2'%3E%3Crect x='5' y='6' width='22' height='20' rx='2'/%3E%3Cline x1='12' y1='6' x2='12' y2='20'/%3E%3Cline x1='20' y1='6' x2='20' y2='20'/%3E%3Cline x1='5' y1='20' x2='27' y2='20'/%3E%3C/g%3E%3Ccircle cx='24' cy='23' r='2' fill='%233fb950'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Freddrick Logan">
+<meta property="og:title" content="Venture Canvas Studio — lean canvas with a hypothesis tracker">
+<meta property="og:description" content="Falsifiable hypotheses per block, experiments with the criterion recorded first, and a test-next list ranked by risk, uncertainty and cost.">
+<meta property="og:url" content="https://freddricklogan.github.io/venture-canvas-studio/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Venture Canvas Studio — lean canvas with a hypothesis tracker">
+<meta name="twitter:description" content="Falsifiable hypotheses per block, experiments with the criterion recorded first, and a test-next list ranked by risk, uncertainty and cost.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Venture Canvas Studio","description":"A lean canvas with a hypothesis tracker and experiment log, saved in the browser. Client-side only.","url":"https://freddricklogan.github.io/venture-canvas-studio/","applicationCategory":"BusinessApplication","operatingSystem":"Any (Web)","author":{"@type":"Person","name":"Freddrick Logan","url":"https://fredlogan.phd"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<main id="demo-root" class="exec-main">
+  <h2 class="sr-only">Lean canvas</h2>
+  <p id="status" class="vcs-statusbar" role="status" aria-live="polite"></p>
+  <div class="vcs-top">
+    <label>Canvas <input type="text" id="canvas-name" class="vcs-name" maxlength="120"></label>
+    <span class="vcs-save" id="save-state" aria-live="polite"></span>
+    <div class="vcs-tools" id="tools">
+      <button type="button" class="vcs-btn" id="btn-new">New</button>
+      <button type="button" class="vcs-btn" id="btn-sample">Load sample</button>
+      <button type="button" class="vcs-btn vcs-btn--primary" id="btn-export">Export JSON</button>
+      <button type="button" class="vcs-btn" id="btn-import">Import JSON</button>
+      <button type="button" class="vcs-btn" id="btn-print">Print</button>
+      <button type="button" class="vcs-btn" id="btn-clear">Forget saved copy</button>
+      <input type="file" id="file-import" accept="application/json,.json" class="sr-only" tabindex="-1" aria-label="Canvas JSON file">
+    </div>
+  </div>
+
+  <section aria-labelledby="canvas-heading">
+    <h3 id="canvas-heading" class="sr-only">Canvas blocks</h3>
+    <div class="vcs-canvas" id="canvas"></div>
+  </section>
+
+  <div class="vcs-two">
+    <section class="vcs-panel" aria-labelledby="summary-heading">
+      <h3 id="summary-heading">Validation summary</h3>
+      <p class="vcs-hint">Computed from the hypotheses and their latest experiment outcome.</p>
+      <dl id="summary"></dl>
+    </section>
+    <section class="vcs-panel" id="next-panel" aria-labelledby="next-heading">
+      <h3 id="next-heading">Test next</h3>
+      <p class="vcs-hint">Priority = risk × (6 − confidence) ÷ effort. Untested and inconclusive hypotheses only.</p>
+      <ul class="vcs-nextlist" id="next"></ul>
+    </section>
+  </div>
+
+  <section class="vcs-panel" aria-labelledby="hyp-heading">
+    <h3 id="hyp-heading">Hypotheses</h3>
+    <p class="vcs-hint">Every block's beliefs, stated so they can be wrong. Select one to edit it or record an experiment.</p>
+    <div class="vcs-scroll"><table class="vcs-table" id="hypotheses"></table></div>
+  </section>
+
+  <section class="vcs-panel" id="editor-panel" aria-labelledby="editor-heading">
+    <h3 id="editor-heading">Selected hypothesis</h3>
+    <p class="vcs-hint">Score it, then record experiments. The success criterion is required and is entered before the result.</p>
+    <div id="editor"></div>
+  </section>
+</main>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
