@@ -98,6 +98,8 @@ $<HTMLInputElement>('file-import').addEventListener('change', (e) => {
 $('btn-print').addEventListener('click', () => window.print());
 
 const shell = mountExecShell({
+  theme: 'midnight',
+  accent: 'secondary',
   title: 'Venture Canvas Studio',
   tagline: 'A lean canvas whose every block carries falsifiable hypotheses, an experiment log with the success criterion recorded before the result, and a "test next" list ranked by risk, uncertainty and cost. Saved in your browser; nothing leaves it.',
   repo: REPO, pagesUrl: PAGES,
